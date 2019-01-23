@@ -1,0 +1,31 @@
+{
+  "name": "suggestmo-back-end",
+  "version": "1.0.0",
+  "description": "Back-end for SuggestMo film site",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon -r dotenv/config index.js",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RyBrockers/suggestmo-back-end.git"
+  },
+  "keywords": [
+    "express",
+    "mongoose",
+    "server"
+  ],
+  "author": "Luke Brannagan and Ryan Brockley",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RyBrockers/suggestmo-back-end/issues"
+  },
+  "homepage": "https://github.com/RyBrockers/suggestmo-back-end#readme",
+  "dependencies": {
+    "dotenv": "^5.0.1",
+    "express": "^4.16.3",
+    "mongodb": "^3.1.10",
+    "mongoose": "^5.0.14"
+  }
+}
