@@ -11,4 +11,8 @@ exports.addUser = (req, res) => {
   user.save().then(() => {
     res.status(201).json(user.toObject());
   })
-}
+    .catch((error) => {
+      console.log(error);
+    })
+
+};
