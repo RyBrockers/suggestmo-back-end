@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const app = require('./src/app');
-
-mongoose.connect(process.env.DATABASE_CONN, { useNewUrlParser: true }, () => {
-  console.log('Connected');
-  app.listen(8080);
+console.log(process.env.DATABASE_CONN);
+mongoose.connect(process.env.DATABASE_CONN, { useNewUrlParser: true }, (error) => {
+  console.log(error);
+  app.listen(3000);
 });

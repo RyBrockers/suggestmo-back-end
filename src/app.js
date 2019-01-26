@@ -1,14 +1,14 @@
 const express = require('express');
-const userRouter = require('../src/routes/userRouter');
 
+const userRouter = require('./routes/userRouter');
 
 const app = express();
 app.use(express.json());
 
 app.use('/users', userRouter);
 
-app.get('*', (_, res) => {
-  res.redirect('/');
+app.get('*', (req, res) => {
+  res.status(200).json({ message: 'Hello World!' });
 });
 
 module.exports = app;
