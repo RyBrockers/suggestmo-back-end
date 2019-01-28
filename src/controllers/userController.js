@@ -2,7 +2,7 @@ const User = require('../Models/userModel');
 
 exports.addUser = (req, res) => {
   const user = new User({
-    firstName: req.body.name,
+    firstName: req.body.firstName,
     lastName: req.body.lastName,
     email: req.body.email,
     password: req.body.password,
@@ -11,5 +11,8 @@ exports.addUser = (req, res) => {
 
   user.save().then(() => {
     res.status(201).json(user.toObject());
-  });
+  })
+    .catch((error) => {
+      console.log(error);
+    })
 };
