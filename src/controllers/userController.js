@@ -1,4 +1,6 @@
 const User = require('../Models/userModel');
+const jwt = require('jsonwebtoken');
+
 
 exports.addUser = (req, res) => {
   const user = new User({
@@ -15,4 +17,17 @@ exports.addUser = (req, res) => {
     .catch((error) => {
       console.log(error);
     })
+};
+
+exports.login = (req, res) => {
+  User.findOne({ email: req.body.email }, (error, user) => {
+    if (user !== null && user.validatePassword(req.body.password)) {
+      jwt.sign(user.sanitize(), process.env.JWT_SECRET, { expiresIn: '1d' }, (err, token) => {
+        console.log(err);
+        res.status('200').json({ token });
+      });
+    } else {
+      res.status(401).send();
+    }
+  });
 };
