@@ -48,6 +48,7 @@ userSchema.methods.sanitize = function sanitize() {
 };
 
 userSchema.methods.validatePassword = function validatePassword(password) {
+  console.log('hello');
   return bcrypt.compareSync(password, this.password);
 }
 
