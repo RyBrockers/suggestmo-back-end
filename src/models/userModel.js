@@ -43,12 +43,10 @@ userSchema.pre('save', function hashPassword(next) {
 
 userSchema.methods.sanitize = function sanitize() {
   const { password, ...rest } = this.toObject();
-  console.log(rest);
   return rest;
 };
 
 userSchema.methods.validatePassword = function validatePassword(password) {
-  console.log('hello');
   return bcrypt.compareSync(password, this.password);
 }
 
