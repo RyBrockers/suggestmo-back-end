@@ -5,7 +5,7 @@ const userController = require('../Controllers/userController');
 
 const router = express.Router();
 
-router.post('/', userController.addMovie);
+router.post('/', userController.login);
 // router.post('/', authController.auth);
 
 

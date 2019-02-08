@@ -39,9 +39,13 @@ exports.addMovie = (req, res) => {
   });
 
   movie.save().then(() => {
-    res.status(201).json(book);
+    res.status(201).json(movie);
   })
     .catch(error => {
       console.log(error);
     });
+}
+
+exports.deleteMovie = (req, res) => {
+
 }
