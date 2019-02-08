@@ -33,15 +33,15 @@ exports.login = (req, res) => {
   });
 };
 
-exports.AddMovie = (req, res) => {
+exports.addMovie = (req, res) => {
   const movie = new Movie({
     title: req.body.title,
-    year: req.body.year,
-  })
+  });
+
   movie.save().then(() => {
-    res.status(201).json(movie.toObject());
+    res.status(201).json(book);
   })
-    .catch((error) => {
+    .catch(error => {
       console.log(error);
-    })
+    });
 }
