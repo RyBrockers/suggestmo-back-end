@@ -47,5 +47,8 @@ exports.addMovie = (req, res) => {
 }
 
 exports.deleteMovie = (req, res) => {
-
+  movie.deleteOne({ title: req.body.title }, function (err) {
+    res.status(200).send();
+    console.log(err);
+  })
 }
