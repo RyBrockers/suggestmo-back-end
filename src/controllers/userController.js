@@ -1,4 +1,5 @@
 const User = require('../Models/userModel');
+const Movie = require('../models/movieModel');
 const jwt = require('jsonwebtoken');
 
 
@@ -31,3 +32,16 @@ exports.login = (req, res) => {
     }
   });
 };
+
+exports.AddMovie = (req, res) => {
+  const movie = new Movie({
+    title: req.body.title,
+    year: req.body.year,
+  })
+  movie.save().then(() => {
+    res.status(201).json(movie.toObject());
+  })
+    .catch((error) => {
+      console.log(error);
+    })
+}
