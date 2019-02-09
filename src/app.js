@@ -12,7 +12,8 @@ app.use(cors());
 
 app.use('/users', userRouter);
 app.use('/login', authRouter);
-app.use('/addMovie', movieRouter)
+app.use('/addMovie', movieRouter);
+app.use('/deletMovie', movieRouter);
 // app.use('/auth', authRouter);
 
 app.get('*', (req, res) => {
